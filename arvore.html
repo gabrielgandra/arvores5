@@ -363,5 +363,113 @@ if(valores.length >= 0){
         document.getElementById("p8").innerHTML = valores[2];
         document.getElementById("p9").innerHTML = valores[3];
     }
+    if(valores.length > 4){
+    parseInt(valores);
+    primeiraEsquerda.push(valores[0]);
+    primeiraEsquerda.push(valores[1]);
+    primeiraEsquerda.sort(sortFunction);
+    primeiroMeio.push(valores[2]);
+    primeiraDireita.push(valores[3]);
+    primeiraDireita.push(valores[4]);
+    primeiraDireita.sort(sortFunction);
+    document.getElementById("p6").innerHTML = "";
+    document.getElementById("p7").innerHTML = "";
+    document.getElementById("p8").innerHTML = "";
+    document.getElementById("p9").innerHTML = "";
+    document.getElementById("p7").innerHTML = primeiraEsquerda[0];
+    document.getElementById("p8").innerHTML = primeiraEsquerda[1];
+    document.getElementById("p10").innerHTML = primeiroMeio;
+    document.getElementById("p12").innerHTML = primeiraDireita[0];
+    document.getElementById("p13").innerHTML = primeiraDireita[1];
+    }
+if(valores.length > 5 ){
+        if(parseInt(valores[5]) > parseInt(valores[2])){
+            primeiraDireita.push(valores[5]);
+            primeiraDireita.sort(sortFunction);
+            console.log(primeiraDireita);
+            document.getElementById("p13").innerHTML = "";
+            document.getElementById("p11").innerHTML = primeiraDireita[0];
+            document.getElementById("p12").innerHTML = primeiraDireita[1];
+            document.getElementById("p13").innerHTML = primeiraDireita[2];
+        }
+        else{
+            primeiraEsquerda.push(valores[5]);
+            primeiraEsquerda.sort(sortFunction);    
+            document.getElementById("p7").innerHTML = primeiraEsquerda[0];
+            document.getElementById("p8").innerHTML = primeiraEsquerda[1];
+            document.getElementById("p9").innerHTML = primeiraEsquerda[2];
+        }
+}
+        if(valores.length > 6 ){
+            if(parseInt(valores[6]) > parseInt(valores[2])){
+            primeiraDireita.push(valores[6]);
+            primeiraDireita.sort(sortFunction);
+            document.getElementById("p14").innerHTML = "";
+            document.getElementById("p11").innerHTML = primeiraDireita[0];
+            document.getElementById("p12").innerHTML = primeiraDireita[1];
+            document.getElementById("p13").innerHTML = primeiraDireita[2];
+            if(primeiraDireita[3] != undefined){
+            document.getElementById("p14").innerHTML = primeiraDireita[3];
+            }else{
+            document.getElementById("p14").innerHTML = "";
+            }
+                console.log(primeiraDireita);
+            }
+            else{
+            primeiraEsquerda.push(valores[6]);
+            primeiraEsquerda.sort(sortFunction);
+            document.getElementById("p6").innerHTML = primeiraEsquerda[0];
+            document.getElementById("p7").innerHTML = primeiraEsquerda[1];
+            document.getElementById("p8").innerHTML = primeiraEsquerda[2];
+            if(primeiraEsquerda[3] != undefined){
+            document.getElementById("p9").innerHTML = primeiraEsquerda[3];
+            }else{
+            document.getElementById("p9").innerHTML = "";
+            }
+            }
+        }
+        if(valores.length > 7 ){
+            if(parseInt(valores[7]) > parseInt(valores[2])){
+                primeiraDireita.push(valores[7]);
+                primeiraDireita.sort(sortFunction);
+            }
+            else{
+                primeiraEsquerda.push(valores[7]);
+                primeiraEsquerda.sort(sortFunction);
+            }
+    if(primeiraDireita.length == 5){
+        var index = primeiraDireita;
+        primeiraDireita.sort(sortFunction);
+        segundaDireita.push(primeiraDireita[3], primeiraDireita[4]);
+        segundaDireita.sort(sortFunction);
+        segundoMeioDireita.push(primeiraDireita[2]);
+        primeiraDireita.splice(2);
+        document.getElementById("p11").innerHTML = "";
+        document.getElementById("p12").innerHTML = "";
+        document.getElementById("p13").innerHTML = "";
+        document.getElementById("p14").innerHTML = "";
+        document.getElementById("p12").innerHTML = primeiraDireita[0];
+        document.getElementById("p13").innerHTML = primeiraDireita[1];
+        document.getElementById("p17").innerHTML = segundaDireita[0];
+        document.getElementById("p18").innerHTML = segundaDireita[1];
+        document.getElementById("p15").innerHTML = segundoMeioDireita;
+
+    }else{
+        var index = segundaEsquerda;
+        segundaEsquerda.push(primeiraEsquerda[0], primeiraEsquerda[1])
+        primeiraEsquerda.splice(0, 3);
+        segundoMeioEsquerda.push(primeiraEsquerda[2]);
+        document.getElementById("p11").innerHTML = "";
+        document.getElementById("p12").innerHTML = "";
+        document.getElementById("p13").innerHTML = "";
+        document.getElementById("p14").innerHTML = "";
+        document.getElementById("p12").innerHTML = primeiraDireita[0];
+        document.getElementById("p13").innerHTML = primeiraDireita[1];
+        document.getElementById("p17").innerHTML = segundaDireita[0];
+        document.getElementById("p18").innerHTML = segundaDireita[1];
+        document.getElementById("p15").innerHTML = segundoMeioDireita;
+
+    }
+        }
         </script>
 </html>
